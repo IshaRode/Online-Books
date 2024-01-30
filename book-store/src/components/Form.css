@@ -44,6 +44,11 @@ form {
   color: white;
   margin-top: 20px;
   border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(0, 189, 0);
 }
 
 .success {
@@ -57,6 +62,7 @@ input {
   width: 350px;
   height: 35px;
   border-radius: 4px;
+ 
 }
 
 label {

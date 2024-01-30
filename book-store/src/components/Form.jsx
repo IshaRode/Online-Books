@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+// For navigation
 import { NavLink } from "react-router-dom";
 import "./Form.css";
 
@@ -13,11 +14,11 @@ function App() {
     getValues,
   } = useForm();
 
+  // On click of SIGN UP, showing data entered in console
   const onSubmit = (data) => {
     console.log(data);
     setState(true);
   };
-
 
 
   return (
@@ -25,12 +26,14 @@ function App() {
       <div>
       <nav>
       <div className="logo">Kalvium Books</div>
+      {/* Linking to homepage  */}
         <NavLink to="/">
         <button className="back">Back</button>
         </NavLink>
       </nav>
     </div>
       <div className="contain">
+        {/* On submission of form, show, registration successful */}
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           <div className="app">
             {state && <p className="success">REGISTRATION SUCCESSFUL!</p>}
@@ -82,6 +85,7 @@ function App() {
                   message: "Password must be less than 30 characters",
                 },
                 pattern: {
+                  // For atleast one special character included 
                   value: /.*[!@#$%^&*()_+{}[\]:;<>,.?~\\/-].*/,
                   message: "Please include at least one special character",
                 },
@@ -96,6 +100,7 @@ function App() {
               placeholder="Confirm password"
               {...register("repeatPassword", {
                 required: "Confirmation is Required!",
+                // if password does not match to the password entered before, shoe error
                 validate: (value) =>
                   value === getValues("password") || "Password does not match",
               })}

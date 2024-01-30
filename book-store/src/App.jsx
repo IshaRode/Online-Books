@@ -1,10 +1,10 @@
 import Home from './components/Home'
 import Form from './components/Form'
-import { BrowserRouter } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export default function App() {
   return (
+    // BrowserRouter for initiating and linking of pages
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
