@@ -1,6 +1,7 @@
 import Home from './components/Home'
 import Form from './components/Form'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import './App.css'
 
 export default function App() {
   return (

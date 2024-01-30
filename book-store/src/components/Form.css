@@ -1,6 +1,4 @@
-:root {
-  background-image: url("./src/images/white.jpg");
-}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -12,7 +10,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("./src/images/white.jpg");
 }
 
 nav {
