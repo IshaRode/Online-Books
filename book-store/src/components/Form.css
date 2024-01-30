@@ -52,6 +52,7 @@ form {
   padding: 7px;
   border-radius: 5px;
 }
+
 input {
   width: 350px;
   height: 35px;
@@ -86,4 +87,15 @@ p {
 
 .back:hover {
   color: rgb(221, 0, 0);
+}
+
+@media only screen and (max-width: 600px) {
+
+  input {
+    width: 280px;
+  }
+
+  .logo {
+    display: none;
+  }
 }

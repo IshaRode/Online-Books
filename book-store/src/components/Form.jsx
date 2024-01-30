@@ -13,12 +13,12 @@ function App() {
     getValues,
   } = useForm();
 
-  const onSubmit = () => {
-    const values = getValues();
-    console.log(values);
+  const onSubmit = (data) => {
+    console.log(data);
     setState(true);
-    sessionStorage.setItem("Successful", "true")
   };
+
+
 
   return (
     <div>
@@ -33,12 +33,12 @@ function App() {
       <div className="contain">
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           <div className="app">
-            {state && <p>REGISTRATION SUCCESSFUL!</p>}
+            {state && <p className="success">REGISTRATION SUCCESSFUL!</p>}
 
             <label>Name:</label>
             <input
               type="text"
-              name="firstName"
+              name="name"
               placeholder="Enter your Name"
               {...register("firstName", {
                 required: "First Name is Required!",
