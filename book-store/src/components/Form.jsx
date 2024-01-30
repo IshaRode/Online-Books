@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./Form.css";
 
 function App() {
@@ -16,17 +17,23 @@ function App() {
     const values = getValues();
     console.log(values);
     setState(true);
-
-    localStorage.setItem("formData", JSON.stringify(values));
-    sessionStorage.setItem("formData", JSON.stringify(values));
+    sessionStorage.setItem("Successful", "true")
   };
 
   return (
     <div>
+      <div>
+      <nav>
+      <div className="logo">Kalvium Books</div>
+        <NavLink to="/">
+        <button className="back">Back</button>
+        </NavLink>
+      </nav>
+    </div>
       <div className="contain">
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           <div className="app">
-            {state && <p>Registration Successful!</p>}
+            {state && <p>REGISTRATION SUCCESSFUL!</p>}
 
             <label>Name:</label>
             <input
@@ -71,8 +78,8 @@ function App() {
                   message: "Password must be more than 10 characters",
                 },
                 maxLength: {
-                  value: 20,
-                  message: "Password must be less than 20 characters",
+                  value: 30,
+                  message: "Password must be less than 30 characters",
                 },
                 pattern: {
                   value: /.*[!@#$%^&*()_+{}[\]:;<>,.?~\\/-].*/,

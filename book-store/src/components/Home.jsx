@@ -19,7 +19,6 @@ function Home() {
       })
       .catch(() => {
         console.log('Status code: 404');
-        console.log('Website not found');
       });
   }, []);
 
